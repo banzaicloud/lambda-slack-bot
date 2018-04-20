@@ -1,6 +1,6 @@
 ## lambda-slack-bot
 
-An example of using AWS Lambda with Go
+An AWS Lambda with Go Slackbot to list running EC2 instanes. For further details reads this [post](https://banzaicloud.com/blog/slackbot/).
 
 ## Compile
 
