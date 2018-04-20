@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  HelloFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: main
+      Runtime: go1.x
+      Environment:
+        Variables:
+            REGIONS: eu-west-1,eu-west-2,eu-west-3,eu-central-1,us-east-1,us-east-2,us-west-1,us-west-2
+      Policies: AmazonEC2ReadOnlyAccess 
+      Events:
+        SlackPost:
+          Type: Api
+          Properties:
+            Path: /
+            Method: post
+        Root:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
+        Version:
+          Type: Api
+          Properties:
+            Path: /version
+            Method: get
+Outputs:
+    RestUrl:
+        Description: External Rest Api url
+        Value: !Join [ "", [ "https://", !Ref ServerlessRestApi , ".execute-api.", !Ref "AWS::Region" , ".amazonaws.com/", !Ref ServerlessRestApiProdStage ] ]
