@@ -1,4 +1,4 @@
-## lambda-go-samples
+## lambda-slack-bot
 
 An example of using AWS Lambda with Go
 
