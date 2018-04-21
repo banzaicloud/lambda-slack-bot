@@ -1,6 +1,6 @@
 ## lambda-slack-bot
 
-An AWS Lambda with Go Slackbot to list running EC2 instanes. For further details reads this [post](https://banzaicloud.com/blog/slackbot/).
+A Golang AWS Lambda to list running EC2 instanes - used by a Slack bot, to better control AWS spendings. For further details reads this [post](https://banzaicloud.com/blog/slackbot/).
 
 ## Compile
 
